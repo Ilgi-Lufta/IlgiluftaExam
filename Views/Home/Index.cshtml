@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+} 
+
+        <h1 class="text-center mt-5 mb-5">Hobbies</h1>
+    
+
+<div class="row">
+   <div class="col sm-6">
+
+            <table class="table table-striped table-bordered  ">
+            
+                <thead>
+                    <tr>
+                        <th   scope="col ">Name</th>
+                        <th   scope="col">Enthusiast</th>
+                    
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in ViewBag.AllHobbies)
+                    {
+                    <tr>
+                        <td scope="row"> <a asp-action="SHowHobby" asp-controller="Home" asp-route-id="@item.HobbyId" > @item.Name</a>  </td>
+                        <td scope="row"> @item.MyEnthusiasts.Count  </td>
+
+                    </tr>
+                         }
+            
+           
+        </tbody>
+            
+        
+    </table>
+            
+            <a asp-action="AddHobby" asp-controller="Home"> Create a Hobby</a>
+   </div>
+    <div class="col sm-6">
+   
+
+   </div>
+</div>
